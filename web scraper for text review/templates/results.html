@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <h2 align = "center">Review Page</h2>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<!--<style>-->
+<!--body {-->
+<!--  background-image: url('bgimg.jpg');-->
+<!--  color: white-->
+<!--}-->
+<!--</style>-->
+</head>
+
+<body style="background-color: silver;">
+
+  <div class="table-users">
+
+
+   <table cellspacing="0" border="1">
+      <tr>
+         <th>Movie Name</th>
+         <th>Score</th>
+          <th>Critics</th>
+         <th>Synopsis</th>
+         <th>Starring</th>
+         <th>DirectedBy</th>
+      </tr>
+         {% for review in reviews %}
+      <tr>
+         <td>{{review['movie']}}</td>
+         <td align="center">{{review['score']}}</td>
+         <td>{{review['critics']}}</td>
+         <td>{{review['synopsis']}}</td>
+          <td>{{review['starring']}}</td>
+         <td>{{review['directedBy']}} </td>
+                 {% endfor %}
+   </table>
+</div>
+
+
+
+</body>
+
+</html>
